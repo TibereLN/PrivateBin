@@ -20,3 +20,4 @@ Constater que ça marche pas
 Enlever le --strict de "composer validate --strict" (parce qu'on a des warnings dans nos dépendances)
 Constater que ça marche
 Comprendre le fichier fraîchement volé
+Nettoyer le dépôt
