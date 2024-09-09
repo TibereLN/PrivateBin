@@ -14,4 +14,9 @@ TP2 :
 
 Lecture de la doc github actions et phpunit
 Création du dépôt git : https://github.com/TibereLN/PrivateBin
-mise en place du workflow -> exécution d'actions prédéfinies selon des événements choisis
+Récupérer et modifier le script de test proposé par github 
+Mettre en place du workflow -> exécution d'actions prédéfinies selon des événements choisis
+Constater que ça marche pas
+Enlever le --strict de "composer validate --strict" (parce qu'on a des warnings dans nos dépendances)
+Constater que ça marche
+Comprendre le fichier fraîchement volé
