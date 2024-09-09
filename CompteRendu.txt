@@ -1,0 +1,15 @@
+TP1 :
+
+Installer php
+Installer composer
+Lancer "make test"
+Installer les packages manquants (simplexml, pdo, php dom's extension)
+Relancer "make test"
+Lire le rapport de test
+Installer d'autres bibliothèques (gd)
+Constater que tout marche, sinon lire le readme
+Lire la doc de github action
+
+TP2 :
+
+
