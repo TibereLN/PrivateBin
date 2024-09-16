@@ -36,7 +36,7 @@ jobs:
 
     - name: Run phpUnit code coverage
       run: |
-        XDEBUG_MODE=coverage ./vendor/bin/phpunit tst --coverage-html
+        XDEBUG_MODE=coverage ./vendor/bin/phpunit --coverage-html
 
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
