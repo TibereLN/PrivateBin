@@ -36,7 +36,13 @@ jobs:
 
     - name: Run phpUnit code coverage
       run: |
-        XDEBUG_MODE=coverage ./vendor/bin/phpunit --coverage-html ./log/php-coverage-report
+        XDEBUG_MODE=coverage ./vendor/bin/phpunit --coverage-clover ./log/coverage-clover.xml
+
+    - name: Publish coverage report
+      uses: actions/upload-artifact@v3
+      with:
+        name: coverage-report
+        path: ./log/coverage-clover.xml
 
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
