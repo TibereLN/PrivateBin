@@ -11,7 +11,6 @@ permissions:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -34,6 +33,10 @@ jobs:
       
     - name: Test project
       run: make test
+
+    - name: Run phpUnit code coverage
+      run: |
+        XDEBUG_MODE=coverage ./vendor/bin/phpunit tst --coverage-html
 
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
