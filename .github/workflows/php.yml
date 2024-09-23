@@ -65,5 +65,6 @@ jobs:
         name: coverage-report
         path: ./log/coverage-cobertura.xml
 
-    - name : RUN TREE
-      run : tree 
+    - name: Check if coverage file exists
+      run: ls -la ./log
+
