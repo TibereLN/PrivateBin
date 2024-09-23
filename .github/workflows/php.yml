@@ -36,7 +36,7 @@ jobs:
 
     - name: Run phpUnit code coverage
       run: |
-        XDEBUG_MODE=coverage ./vendor/bin/phpunit --coverage-cobertura ./log/coverage-clover.xml
+        XDEBUG_MODE=coverage ./vendor/bin/phpunit --coverage-cobertura ./log/coverage-cobertura.xml
 
     - name: Code Coverage Summary
       # You may pin to the exact commit or the version.
@@ -62,8 +62,8 @@ jobs:
         # Threshold percentages for badge and health indicators, lower threshold can also be used to fail the action.
         thresholds: 50 75 # optional, default is 50 75
 
-    # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
-    # Docs: https://getcomposer.org/doc/articles/scripts.md
-
-    # - name: Run test suite
-    #   run: composer run-script test
+    - name: Upload code coverage report
+      uses: actions/upload-artifact@v3
+      with:
+        name: coverage-report
+        path: ./log/coverage-cobertura.xml
