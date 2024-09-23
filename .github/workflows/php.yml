@@ -30,9 +30,6 @@ jobs:
 
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
-      
-    - name: Test project
-      run: make test
 
     - name: Run phpUnit code coverage
       run: |
@@ -66,4 +63,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: coverage-report
-        path: ./log/coverage-cobertura.xml
+        path: ./log/coverage-cobertura.md
