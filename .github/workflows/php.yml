@@ -63,4 +63,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: coverage-report
-        path: ./log/coverage-cobertura.md
+        path: ./log/coverage-cobertura.xml
+
+    - name : RUN TREE
+      run : tree 
