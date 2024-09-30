@@ -31,3 +31,17 @@ Modifier le makefile en ajoutant "--coverage-text" à la règle "test"
 Constater que le rapport s'affiche
 Modifier le makefile en remplaçant "--coverage-text" par "--coverage-html ./log" à la règle "test"
 Se balader dans les pages du rapport de test généré
+Modifier le php.yml pour générer le rapport code coverage au format texte
+Remodifier le php.yml pour générer le rapport en cobertura
+Ajout de l'extension CodeCoverageSummary
+Export du summary dans le rapport en ligne de github
+
+TP4 :
+Installation de "squizlabs/php_codesniffer=3.*" et des dépendances
+Lancer l'analyse du code avec sniffer
+Constater mes erreurs et warnings
+Installation de "phpmd/phpmd=@stable"
+Créer le fichier ruleset.xml
+Lancer l'analyse du code avec phpmd
+Constater les violations au ruleset
+
