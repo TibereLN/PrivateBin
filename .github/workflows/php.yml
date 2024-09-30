@@ -63,6 +63,9 @@ jobs:
       uses: php-actions/phpstan@v3
       with:
         path: lib/
+
+    - name: Run PHPCBF
+      run: ./vendor/bin/phpcbf --standar=psr12 ./lib/
         
 
 
