@@ -30,16 +30,34 @@ jobs:
 
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
-      
-    - name: Test project
-      run: make test
 
     - name: Run phpUnit code coverage
       run: |
-        XDEBUG_MODE=coverage ./vendor/bin/phpunit tst --coverage-html
+        XDEBUG_MODE=coverage ./vendor/bin/phpunit --coverage-cobertura ./log/coverage-cobertura.xml
 
-    # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
-    # Docs: https://getcomposer.org/doc/articles/scripts.md
+    - name: Code Coverage Summary
+      uses: irongut/CodeCoverageSummary@v1.3.0
+      with:
+        filename: ./log/coverage-cobertura.xml
+        badge: true
+        format: markdown
+        output: both
+        thresholds: 50 75 
 
-    # - name: Run test suite
-    #   run: composer run-script test
+    - name: Exporting coverage to action summary
+      run: cat code-coverage-results.md >> $GITHUB_STEP_SUMMARY
+
+    - name: PHP Mess Detector
+      uses: php-actions/phpmd@v1
+      with:
+        path: lib/
+        output: text
+        ruleset: test/phpmd/ruleset.xml
+
+    - name: PHP Stan
+      uses: php-actions/phpstan@v3
+      with:
+        path: lib/
+        
+
+

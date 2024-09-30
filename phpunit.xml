@@ -17,5 +17,6 @@
   </testsuite>
   <logging>
     <testdoxHtml outputFile="log/testdox.html"/>
+    <log type="coverage-clover" target="./log/coverage-cobertura.xml"/>
   </logging>
 </phpunit>
