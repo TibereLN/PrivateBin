@@ -47,7 +47,14 @@ jobs:
     - name: Exporting coverage to action summary
       run: cat code-coverage-results.md >> $GITHUB_STEP_SUMMARY
 
-    - name: CI
+    - name: PHP Mess Detector
+      uses: php-actions/phpmd@v1
+      with:
+        path: lib/
+        output: text
+        ruleset: test/phpmd/ruleset.xml
+
+    - name: PHP Stan
       uses: php-actions/phpstan@v3
       with:
         path: lib/
