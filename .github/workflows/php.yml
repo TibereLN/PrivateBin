@@ -48,9 +48,7 @@ jobs:
       run: cat code-coverage-results.md >> $GITHUB_STEP_SUMMARY
 
     - name: CI
-    - uses: actions/checkout@v3
-    - uses: php-actions/composer@v6
-    - uses: php-actions/phpstan@v3
+      uses: php-actions/phpstan@v3
       with:
         path: lib/
         
