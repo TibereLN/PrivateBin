@@ -64,8 +64,8 @@ jobs:
     #   with:
     #     path: lib/
 
-    - name: Run PHPCBF
-      run: ./vendor/bin/phpcbf --standar=psr12 ./lib/
+    # - name: Run PHPCBF
+    #   run: ./vendor/bin/phpcbf --standar=psr12 ./lib/
 
     - name: Delete vendor
       run: rm -rf ./vendor
