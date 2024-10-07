@@ -66,6 +66,16 @@ jobs:
 
     - name: Run PHPCBF
       run: ./vendor/bin/phpcbf --standar=psr12 ./lib/
+
+    - name: Delete vendor
+      run: rm -rf ./vendor
+    
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
+        server: ftp.samkirkland.com
+        username: ${{ secrets.ftp_username }}
+        password: ${{ secrets.ftp_mdp }}
         
 
 
