@@ -73,9 +73,13 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
-        server: 188.165.230.7:21
+        server: 188.165.230.7
+        port : 21
         username: ${{ secrets.ftp_username }}
         password: ${{ secrets.ftp_mdp }}
+        server-dir: /www/
+        exclude: | 
+          **/.git*
         
 
 
