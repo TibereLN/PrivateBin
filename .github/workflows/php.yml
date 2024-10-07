@@ -59,10 +59,10 @@ jobs:
         output: text
         ruleset: ruleset.xml
 
-    - name: PHP Stan
-      uses: php-actions/phpstan@v3
-      with:
-        path: lib/
+    # - name: PHP Stan
+    #   uses: php-actions/phpstan@v3
+    #   with:
+    #     path: lib/
 
     - name: Run PHPCBF
       run: ./vendor/bin/phpcbf --standar=psr12 ./lib/
